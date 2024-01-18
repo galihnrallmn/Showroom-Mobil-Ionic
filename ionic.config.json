@@ -1,0 +1,7 @@
+{
+  "name": "SorumMobil",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
