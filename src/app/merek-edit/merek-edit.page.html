@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Edit Data Merek</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="floating">Nama Merek</ion-label>
+    <ion-input [(ngModel)]="namamerek" type="text" placeholder="Nama Merek"></ion-input>
+  </ion-item>
+
+  <ion-row>
+    <ion-col>
+      <ion-button type="button" (click)="updateMerek()" color="primary" shape="full" expand="block">Edit Data Merek</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
+

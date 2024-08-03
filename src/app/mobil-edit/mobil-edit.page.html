@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Edit Data Mobil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="floating">Merek</ion-label>
+    <ion-select [(ngModel)]="idmerek">
+      <ion-select-option *ngFor="let merek_value of merek" [value]="merek_value.idmerek">{{ merek_value.namamerek }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Nama Mobil</ion-label>
+    <ion-input [(ngModel)]="namamobil" type="text" placeholder="Nama Mobil"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Tahun</ion-label>
+    <ion-input [(ngModel)]="tahun" type="text" placeholder="Tahun Mobil"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Transmisi</ion-label>
+    <ion-select [(ngModel)]="tranmisi">
+      <ion-select-option value="Manual">Manual</ion-select-option>
+      <ion-select-option value="Otomatis">Otomatis</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-row>
+    <ion-col>
+      <ion-button type="button" (click)="updateMobil()" color="primary" shape="full" expand="block">Edit Data Mobil</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
+

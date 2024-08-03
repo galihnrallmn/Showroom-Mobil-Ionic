@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Data Mobil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="full">
+    <ion-button type="button" [routerLink]="['/mobil-tambah']"
+    routerLinkActive="router-link-active" color="primary"
+    expand="block">Tambah Mobil</ion-button>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>List Data Mobil</ion-list-header>
+  </ion-list>
+  <ion-card lines="inset" *ngFor="let mobil_value of mobil">
+    <ion-item>
+      <ion-icon name="car" slot="start"></ion-icon>
+      <ion-label>{{ mobil_value.namamerek }} {{ mobil_value.namamobil }} {{ mobil_value.tahun }}, {{ mobil_value.tranmisi }}.</ion-label>
+      <ion-button color="warning" slot="end" [routerLink]="['/mobil-edit/',mobil_value.idmobil]" routerLinkActive="router-link-active">Edit</ion-button>
+      <ion-button color="danger" slot="end" (click)="deleteMobil(mobil_value.idmobil)">Hapus</ion-button>
+    </ion-item>
+  </ion-card>
+
+</ion-content>

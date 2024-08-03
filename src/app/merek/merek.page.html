@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Data Merek</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="full">
+    <ion-button type="button" [routerLink]="['/merek-tambah']"
+    routerLinkActive="router-link-active" color="primary"
+    expand="block">Tambah Merek</ion-button>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>List Data Merek</ion-list-header>
+  </ion-list>
+  <ion-card lines="inset" *ngFor="let merek_value of merek">
+    <ion-item>
+      <ion-icon name="caret-forward-outline" slot="start"></ion-icon>
+      <ion-label>{{ merek_value.namamerek }}</ion-label>
+      <ion-button color="warning" slot="end" [routerLink]="['/merek-edit/',merek_value.idmerek]" routerLinkActive="router-link-active">Edit</ion-button>
+      <ion-button color="danger" slot="end" (click)="deleteMerek(merek_value.idmerek)">Hapus</ion-button>
+    </ion-item>
+  </ion-card>
+
+</ion-content>
